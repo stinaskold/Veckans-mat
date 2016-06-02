@@ -1,0 +1,42 @@
+h2 Gör din första matsedel:
+p Måndag:
+  input(type="text", placeholder="Namn", name="name")
+  input(type="text", placeholder="Sökord", name="keywords")
+  input(type="text", placeholder="Var finns receptet?", name="found_at")
+p Tisdag:
+  input(type="text", placeholder="Namn", name="name")
+  input(type="text", placeholder="Sökord", name="keywords")
+  input(type="text", placeholder="Var finns receptet?", name="found_at")
+p Onsdag:
+  input(type="text", placeholder="Namn", name="name")
+  input(type="text", placeholder="Sökord", name="keywords")
+  input(type="text", placeholder="Var finns receptet?", name="found_at")
+p Torsdag:
+  input(type="text", placeholder="Namn", name="name")
+  input(type="text", placeholder="Sökord", name="keywords")
+  input(type="text", placeholder="Var finns receptet?", name="found_at")
+p Fredag:
+  input(type="text", placeholder="Namn", name="name")
+  input(type="text", placeholder="Sökord", name="keywords")
+  input(type="text", placeholder="Var finns receptet?", name="found_at")
+p Lördag:
+  input(type="text", placeholder="Namn", name="name")
+  input(type="text", placeholder="Sökord", name="keywords")
+  input(type="text", placeholder="Var finns receptet?", name="found_at")
+p Söndag:
+  input(type="text", placeholder="Namn", name="name")
+  input(type="text", placeholder="Sökord", name="keywords")
+  input(type="text", placeholder="Var finns receptet?", name="found_at")
+
+  p
+    input(type="submit", value="Skapa konto och logga in")
+  p
+    input(type="submit", value="Logga in till existerande konto")
+
+
+    ul
+      each dish in dishes
+        li
+          p #{dish.name}
+          p #{dish.keywords}
+          p #{dish.found_at}

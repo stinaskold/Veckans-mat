@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div
+    h1 Veckans mat
+    form(name="login-form", action="/log-in", method="post")
+      h2 Skapa konto och gör din första matsedel:
+      p Användarnamn:
+        input(type="text")
+      p Lösenord:
+        input(type="text")
+    form(name="dish-form", action="/dishes", method="post")
+      h2 Gör din första matsedel:
+      p
+        input(type="text", placeholder="Namn", name="name")
+        input(type="text", placeholder="Sökord", name="keywords")
+        input(type="text", placeholder="Var finns receptet?", name="found_at")
+      p
+        input(type="submit", value="Lägg till maträtt")
+      h2 Mina sökord:
+      ul
+        each dish in dishes
+          li
+            - for (var i = 0; i < dish.keywords.length; i++)
+                p #{dish.keywords[i]}

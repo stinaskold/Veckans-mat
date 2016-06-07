@@ -40,3 +40,10 @@ p Söndag:
           p #{dish.name}
           p #{dish.keywords}
           p #{dish.found_at}
+
+
+          ul
+            each dish in dishes
+              li
+                - for (var i = 0; i < dish.keywords.length; i++)
+                    p #{dish.keywords[i]}

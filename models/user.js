@@ -1,6 +1,4 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
-    //SALT_WORK_FACTOR = 10;
 var Schema = mongoose.Schema;
 var app = require('../app.js');
 
@@ -16,13 +14,13 @@ var userSchema = new Schema({
  lastname: String
 });
 
-userSchema.methods.generateHash = function(password) {
+/*userSchema.methods.generateHash = function(password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
 }
 
 userSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.local.password)
-}
+}*/
 
 // userSchema.pre('save', function(next) {
 //     var user = this;

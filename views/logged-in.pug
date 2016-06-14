@@ -3,3 +3,63 @@ extends layout
 block content
   div
     h1 Veckans mat
+    main
+      form(name="logout-form", action="/logout", method="get")
+        p
+          input(type="submit", value="Logga ut")
+      form(name="dish-form", action="/dishes", method="post")
+        h2 Lägg till maträtt:
+        p
+          label Namn:
+          input(type="text", name="name")
+        p
+          label Sökord:
+          input(type="text", name="keywords")
+        p
+          label Receptlänk:
+          input(type="text", name="found_at")
+        p
+          input(type="submit", value="Lägg till maträtt")
+      form(name="week-form", action="/week", method="post")
+        h2 Lägg till sökord på respektive veckodag
+        p(class="weekday")
+          label Måndag:
+          select(multiple="multiple", name="Monday")
+            each keyword in keywords
+                option #{keyword}
+        p(class="weekday")
+          label Tisdag:
+          select(multiple="multiple", name="Tuesday")
+            each keyword in keywords
+              option #{keyword}
+        p(class="weekday")
+          label Onsdag:
+          select(multiple="multiple", name="Wednesday")
+            each keyword in keywords
+              option #{keyword}
+        p(class="weekday")
+          label Torsdag:
+          select(multiple="multiple", name="Thursday")
+            each keyword in keywords
+              option #{keyword}
+        p(class="weekday")
+          label Fredag:
+          select(multiple="multiple", name="Friday")
+            each keyword in keywords
+              option #{keyword}
+        p(class="weekday")
+          label Lördag:
+          select(multiple="multiple", name="Saturday")
+            each keyword in keywords
+              option #{keyword}
+        p(class="weekday")
+          label Söndag:
+          select(multiple="multiple", name="Sunday")
+            each keyword in keywords
+              option #{keyword}
+        p
+          input(type="submit", value="Lägg till sökord")
+      form(name="menu-form", action="/generate-menu", method="get")
+        h2 Slumpa veckomatsedel baserad på dina val
+        p
+          input(type="submit", value="Slumpa matsedel")

@@ -7,7 +7,7 @@ var app = require('../app.js');
 
 
 var dishSchema = new Schema({
-  //user: {type : Schema.Types.ObjectId, ref: 'User'},
+  user: {type : Schema.Types.ObjectId, ref: 'User'},
   name: String,
   found_at: String,
   keywords: [String]
@@ -27,18 +27,7 @@ var dishSchema = new Schema({
 //   ]
 // });
 //
-var keywordsSchema = new Schema({
-  user: {type : Schema.Types.ObjectId, ref: 'User'},
-  keywords_week: [
-    {Monday: [String]},
-    {Tuesday: [String]},
-    {Wednesday: [String]},
-    {Thursday: [String]},
-    {Friday: [String]},
-    {Saturday: [String]},
-    {Sunday: [String]}
-  ]
-});
+
 
 // var userSchema = new Schema({
 //  username: {type: String, unique: true},
@@ -79,6 +68,7 @@ var keywordsSchema = new Schema({
 
 var Dish = mongoose.model('Dish', dishSchema);
 module.exports = Dish;
+
 
 // var User = mongoose.model('User', userSchema);
 // module.exports = User;

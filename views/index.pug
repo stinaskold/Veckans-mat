@@ -37,9 +37,14 @@ block content
       form(name="dish-form", action="/dishes", method="post")
         h2 Gör din första matsedel:
         p
-          input(type="text", placeholder="Namn", name="name")
-          input(type="text", placeholder="Sökord", name="keywords")
-          input(type="text", placeholder="Var finns receptet?", name="found_at")
+          label Namn:
+          input(type="text", name="name")
+        p
+          label Sökord:
+          input(type="text", name="keywords")
+        p
+          label Receptlänk:
+          input(type="text", name="found_at")
         p
           input(type="submit", value="Lägg till maträtt")
         h2 Mina sökord:
@@ -47,4 +52,4 @@ block content
           each dish in dishes
             li
               - for (var i = 0; i < dish.keywords.length; i++)
-                  p #{dish.keywords[i]}        
+                  p #{dish.keywords[i]}

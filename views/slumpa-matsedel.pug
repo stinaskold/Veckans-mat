@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div
+    main
+        form(name="menu-form", action="/generate-menu", method="get")
+          h2 Slumpa veckomatsedel baserad på dina val
+          p
+            input(type="submit", value="Slumpa ny matsedel")
+          h2 Veckans matsedel är:
+          p Måndag: #{weekdays.Monday.name} #{weekdays.Monday.found_at}
+          p Tisdag: #{weekdays.Tuesday.name} #{weekdays.Tuesday.found_at}
+          p Onsdag: #{weekdays.Wednesday.name} #{weekdays.Wednesday.found_at}
+          p Torsdag: #{weekdays.Thursday.name} #{weekdays.Thursday.found_at}
+          p Fredag: #{weekdays.Friday.name} #{weekdays.Friday.found_at}
+          p Lördag: #{weekdays.Saturday.name} #{weekdays.Saturday.found_at}
+          p Söndag: #{weekdays.Sunday.name} #{weekdays.Sunday.found_at}

@@ -28,12 +28,32 @@ h2 {
   margin-top: 40px;
   margin-bottom: 10px;
   color: #333;
+  display: block;.2
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 p {
   font-size: 1.2em;
   color: #333;
   margin: 0;
+}
+
+ul {
+  text-align: center;
+  margin-top: 30px;
+}
+
+li {
+    display: inline;
+    margin-right: 50px;
+}
+
+a, a:hover, a:active, a:visited {
+  color: green;
 }
 
 main {
@@ -89,24 +109,25 @@ label {
    font-weight: 300;
 }
 
-.weekday {
-  padding: 10px;
-  padding-right: 0px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #000;
+.week {
+  margin-top: 30px;
 }
 
-.weekday:first-child {
-  margin-top: 50px;
+.weekday {
+  padding: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 .weekday label {
   vertical-align: top;
-  background-color: #E8E8E8;
-  margin-top: -20px;
   margin-left: -10px;
   padding-left: 10px;
-  width: 100%;
+  font-size: 1.2em;
+}
+
+form[name="week-form"] input[type="submit"] {
+  margin-top: 10px;
 }
 
 form[name="menu-form"] {

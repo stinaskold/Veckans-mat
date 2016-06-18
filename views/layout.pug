@@ -5,5 +5,26 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans|Lato:400,300|Satisfy')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-multiselect.css')
+    script(src='http://code.jquery.com/jquery-latest.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/bootstrap-multiselect.js')
   body
-    block content
+    header
+      h1 Veckans mat
+      ul
+        li
+          a(href="/") Hem
+        li
+          a(href="/logga-in") Logga in/registrera
+        li
+          a(href="/spara-matratt") Lägg till maträtt
+        li
+          a(href="/spara-sokord") Lägg till sökord
+        li
+          a(href="/sokord-sparade") Mina sökord  
+        li
+          a(href="/slumpa-matsedel") Slumpa matsedel
+        li
+          a(href="/logga-ut") Logga ut
+  block content

@@ -3,24 +3,10 @@ extends layout
 block content
   div
     main
-      form(name="logout-form", action="/logout", method="get")
-        p
-          input(type="submit", value="Logga ut")
-      form(name="dish-form", action="/dishes", method="post")
-        h2 Lägg till maträtt:
-        p
-          label Namn:
-          input(type="text", name="name")
-        p
-          label Sökord:
-          input(type="text", name="keywords")
-        p
-          label Receptlänk:
-          input(type="text", name="found_at")
-        p
-          input(type="submit", value="Lägg till maträtt")
       form(name="week-form", action="/week", method="post")
-        h2 Lägg till sökord på respektive veckodag
+        h2 Lägg till sökord på alla veckans dagar
+        p Sökorden skapas när du lägger till maträtter, har du inte lagt till några maträtter finns inga sökord.
+        p Om du inte väljer något sökord slumpas en rätt bland alla rätter du har lagt in.
         div(class="week")
           div(class="weekday")
             label Måndag:
@@ -59,7 +45,3 @@ block content
                 option #{keyword}
         p
           input(type="submit", value="Spara sökord")
-      form(name="menu-form", action="/generate-menu", method="get")
-        h2 Slumpa veckomatsedel baserad på dina val
-        p
-          input(type="submit", value="Slumpa matsedel")

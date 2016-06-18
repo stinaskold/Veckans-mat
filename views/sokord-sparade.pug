@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div
+    main
+        h3 Dina sökord är:
+        each weekday in weekdays
+          p Måndag: #{weekday.Monday}
+          p Tisdag: #{weekday.Tuesday}
+          p Onsdag: #{weekday.Wednesday}
+          p Torsdag: #{weekday.Thursday}
+          p Fredag: #{weekday.Friday}
+          p Lördag: #{weekday.Saturday}
+          p Söndag: #{weekday.Sunday}

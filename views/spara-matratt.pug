@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div
+    main
+      form(name="dish-form", action="/dishes", method="post")
+        h2 Lägg till maträtt:
+        p
+          label Namn:
+          input(type="text", name="name")
+        p
+          label Sökord:
+          input(type="text", name="keywords", placeholder="vegetariskt, italienskt, pasta, soppa...")
+        p
+          label Receptlänk:
+          input(type="text", name="found_at")
+        p
+          input(type="submit", value="Lägg till maträtt")
+
+        h2 Din senast sparade maträtt är:
+        each dish in dishes
+          p Namn: #{dish.name}
+          p Sökord: #{dish.keywords}
+          p Receptlänk: #{dish.found_at}

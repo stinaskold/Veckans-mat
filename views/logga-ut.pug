@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div
+    main
+      form(name="logout-form", action="/logout", method="get")
+        h2 Logga ut från ditt konto:
+        p
+          input(type="submit", value="Logga ut")

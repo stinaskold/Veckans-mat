@@ -31,25 +31,6 @@ mongoose.connect('mongodb://localhost/veckans-mat', function(err, database) {
   })
 });
 
-// app.get('/', function(req, res) {
-//   Message.find((function(err, result) {
-//   if (err) return console.log(err)
-//   res.render('index.jade', {messages: result})
-// })).sort({time: -1})
-// })
-//
-// app.post('/messages', function(req, res) {
-//
-//   console.log(req.body)
-//   newMessage = new Message({
-//   'user': req.body.user,
-//   'message': req.body.message
-//   });
-//   newMessage.save(function(err) {
-//   if (err) return console.log(err);
-//   console.log('saved to database');
-//   res.redirect('/');
-//   })
-// })
+
 
 module.exports = app;

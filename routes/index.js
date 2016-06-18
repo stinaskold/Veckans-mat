@@ -134,7 +134,11 @@ router.get('/slumpa-matsedel', function(req, res, next) {
   }
 
   Menu.find({user: req.session.user._id}).populate(Weekdays).exec(function(err, result) {
-    res.render('slumpa-matsedel', {weekdays: result[0]});
+    if (result != "") {
+      res.render('slumpa-matsedel', {weekdays: result[0]});
+    } else {
+      res.render('slumpa-matsedel-start');
+    }
   });
 });
 
@@ -256,13 +260,12 @@ router.get('/generate-menu', function(req, res) {
             }
         }
     );
-
   // Hämta sökorden som användaren har lagt till
   Week.find({user: req.session.user._id}, function(err, result) {
     if (err) {
       return console.log(err)
     }
-
+    console.log(result);
     // Skapa en ny matsedel
     var newMenu = new Menu();
     newMenu.user = req.session.user._id;

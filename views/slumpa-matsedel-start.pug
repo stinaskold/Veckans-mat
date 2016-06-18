@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div
+    main
+        form(name="menu-form", action="/generate-menu", method="get")
+          h2 Slumpa veckomatsedel baserad på dina val
+          p
+            input(type="submit", value="Slumpa ny matsedel")

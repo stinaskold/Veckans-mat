@@ -15,13 +15,13 @@ function saveWeekday(newMenu, weekday, result, user) {
   var dishID;
   // Om sökord finns, slumpa fram en maträtt med dessa sökord
   if (result[weekday] != "") {
-    Dish.aggregate([{$match:{user: newMenu.user, keywords:{$all: result[weekday]}}},{$sample: { size: 1 }}], function(err, result2) {
-      dishID = result2[0]._id;
-      newMenu[weekday] = dishID;
-      newMenu.save(function(err) {
-        if (err) return console.log(err);
-        console.log('saved to database');
-      });
+    Dish.aggregate([{$match:{user: newMenu.user, keywords:{$all: result[weekday]}}}, {$sample: { size: 1 }}], function(err, result2) {
+        dishID = result2[0]._id;
+        newMenu[weekday] = dishID;
+        newMenu.save(function(err) {
+          if (err) return console.log(err);
+          console.log('saved to database');
+        });
     });
   // Om inga sökord finns, slumpa bland alla maträtter som användaren har lagt till
   } else {
@@ -106,11 +106,11 @@ router.get('/spara-sokord', function(req, res, next) {
     console.log('Du har inte loggat in!');
     res.redirect('/inte-inloggad');
   }
-  Dish.distinct('keywords', (function(err, result) {
+  Dish.find({user: req.session.user._id}).distinct('keywords').exec(function(err, result) {
   if (err) return console.log(err)
   console.log(result);
   res.render('spara-sokord', {keywords: result})
-  }))
+});
 });
 
 /* GET sökord sparade */
@@ -244,7 +244,7 @@ router.post('/week', function(req, res) {
       return console.log(err);
     }
     console.log('saved to database');
-    res.redirect('/sokord-sparade');
+    res.redirect('/generate-menu');
   })
 });
 
